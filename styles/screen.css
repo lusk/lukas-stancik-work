@@ -1,0 +1,94 @@
+@import "globals/variables.css";
+@import "globals/reset.css";
+
+/* https://cube.fyi/  */
+
+@import "globals/compositions.css";
+@import "globals/utilities.css";
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: var(--size-1);
+  line-height: 1.4;
+  letter-spacing: var(--tracking);
+  margin-top: var(--region-space, var(--space-2xl));
+}
+
+body[data-color-scheme=light] color-scheme-switch::part(light),
+body[data-color-scheme=dark] color-scheme-switch::part(dark) {
+  fill: currentColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--header-color);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  letter-spacing: var(--tracking-s);
+}
+
+h1 {
+  font-size: var(--size-5);
+}
+
+h2 {
+  font-size: var(--size-4);
+}
+
+h3 {
+  font-size: var(--size-3);
+}
+
+/* Set line lengths */
+p,
+li,
+blockquote:not([class]) {
+  max-width: 50ch;
+}
+
+h1,
+h2,
+h3 {
+  max-width: 20ch;
+}
+
+
+a {
+  text-decoration-color: var(--text-color);
+  text-decoration-thickness: .05em;
+  text-underline-offset: .125rem;
+
+  &:link {
+    color: var(--link-color);
+  }
+  &:visited {
+    color: var(--visited-link-color);
+  }
+  &:active {
+    color: var(--active-link-color);
+  }
+  &:hover,
+  &:focus {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+}
+
+.brand {
+  & #background {
+    fill: var(--logo-bg-color);
+  }
+
+  & #foreground {
+    fill: var(--logo-text-color);
+    stroke: var(--logo-text-color);
+    stroke-width: .5;
+  }
+  & .text {
+    fill: var(--logo-bg-color);
+  }
+}
